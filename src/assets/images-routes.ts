@@ -1,6 +1,7 @@
 // Imagenes
 export const snowLandscape: string = 'assets/images/winter_snow_landscape.png';
 export const chirstmasTree: string = 'assets/images/chirstmas_tree.webp';
+export const background: string = 'assets/images/fondo.png';
 export const decorationChirstmas: string[] = [
   'assets/images/decoracion_navideña(1).webp',
   'assets/images/decoracion_navideña(2).webp',

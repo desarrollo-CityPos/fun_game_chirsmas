@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { cityPosLogoWhiteGreen } from '../assets/images-routes';
+import { background, cityPosLogoWhiteGreen } from '../assets/images-routes';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +10,7 @@ import { cityPosLogoWhiteGreen } from '../assets/images-routes';
 })
 export class App {
   cityPosLogoWhiteGreen: string = cityPosLogoWhiteGreen;
+  background: string = background;
 
   title: string = 'Christmas Game';
 
