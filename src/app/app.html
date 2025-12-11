@@ -1,3 +1,16 @@
-<main class="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-900 dark:bg-gray-900 text-white dark:text-white">
+<main class="flex flex-col items-center justify-center min-h-screen p-4 bg-[#131936] dark:bg-[#131936] text-white dark:text-white">
+  <div class="snow-container">
+    <div class="snow-layer-1 absolute inset-0"></div>
+    <div class="snow-layer-2 absolute inset-0"></div>
+    <div class="snow-layer-3 absolute inset-0"></div>
+  </div>
+
+  <div class="fixed flex justify-center top-0 left-0 w-full bg-red-800 p-4 rounded">
+    <a routerLinkActive="hidden" routerLink="/" mat-button
+    [routerLinkActiveOptions]="{exact:true}" class="absolute top-1/2 left-2 transform -translate-y-1/2">&#9204;</a>
+    <img [src]="cityPosLogoWhiteGreen" alt="Logo de citypos en blanco y verde"
+    class="w-[30%] max-w-[200px]">
+  </div>
+
   <router-outlet />
 </main>

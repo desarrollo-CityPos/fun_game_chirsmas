@@ -11,14 +11,17 @@ export const routes: Routes = [
   },
   {
     path: 'roulette',
+    data: { breadcrumb: 'Ruleta de premios' },
     component: Roulette,
   },
   {
     path: 'quiz',
+    data: { breadcrumb: 'Cuestionario' },
     component: Quiz,
   },
   {
     path: 'chirstmas_tree',
+    data: { breadcrumb: 'Decora la navidad' },
     component: ChirstmasTree,
   },
 ];
