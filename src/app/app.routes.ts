@@ -7,6 +7,12 @@ import { Quiz } from './modules/quiz/quiz';
 export const routes: Routes = [
   {
     path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  {
+    path: 'home',
+    data: { breadcrumb: 'Home' },
     component: Base,
   },
   {
@@ -23,5 +29,9 @@ export const routes: Routes = [
     path: 'chirstmas_tree',
     data: { breadcrumb: 'Decora la navidad' },
     component: ChirstmasTree,
+  },
+  {
+    path: '**',
+    redirectTo: '/home',
   },
 ];

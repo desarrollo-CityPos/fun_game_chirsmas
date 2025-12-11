@@ -5,9 +5,9 @@
     <div class="snow-layer-3 absolute inset-0"></div>
   </div>
 
-  <div class="fixed flex justify-center top-0 left-0 w-full bg-red-800 p-4 rounded">
-    <a routerLinkActive="hidden" routerLink="/" mat-button
-    [routerLinkActiveOptions]="{exact:true}" class="absolute top-1/2 left-2 transform -translate-y-1/2">&#9204;</a>
+  <div class="fixed flex justify-center top-0 left-0 w-full bg-red-800 p-4 rounded z-100">
+    <a routerLinkActive="hidden" [routerLink]="'/home'" [routerLinkActiveOptions]="{exact:true}"
+    mat-button class="absolute top-1/2 left-2 transform -translate-y-1/2">&#9204;</a>
     <img [src]="cityPosLogoWhiteGreen" alt="Logo de citypos en blanco y verde"
     class="w-[30%] max-w-[200px]">
   </div>
