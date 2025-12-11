@@ -1,4 +1,4 @@
-<div class="w-screen h-screen flex flex-col justify-between items-center relative pt-25">
+<div class="w-screen h-screen flex flex-col justify-between items-center relative">
 
   @if (gameOver()) {
     <!-- Overlay -->
@@ -32,7 +32,7 @@
     </div>
   }
 
-  <div class="flex flex-col gap-4">
+  <div class="flex flex-col gap-2 mt-12">
 
     <p class="text-3xl font-bold text-center dancing-script-title">Decora tu arbolito</p>
 
@@ -46,22 +46,24 @@
 
   <img [src]="chirstmasTree" alt="Arbol de navidad" class="absolute top-1/2 left-1/2 w-full transform -translate-1/2 z-0 max-w-[700px]">
 
-  <div class="relative flex flex-wrap justify-around items-center gap-5 p-5 bg-white max-h-[200px] w-full aspect-square">
+  <div class="relative flex justify-around items-center gap-2 p-1 bg-white max-h-[200px] w-full aspect-square">
 
     <img [src]="snowLandscape" alt="fondo de nieve blanca" class="absolute top-0 left-0 w-full transform -translate-y-1/2">
 
-    @for (item of decorationChirstmas; track item ; let i = $index;let isLast = $last) {
+    <div class="flex justify-around items-center gap-2 ">
+      @for (item of decorationChirstmas; track item ; let i = $index;let isLast = $last) {
 
-      <div class="relative w-30 h-10">
-        <img [class]="`w-${isLast ? '30' : '28'} absolute top-1/2 left-1/2 transform -translate-1/2 aspect-auto`" style="aspect-ratio: 1/1;"
-        cdkDrag [src]="item" alt="Decoracion de arbol de navidad" (cdkDragReleased)="droped(`${i}`)">
-        @if (!isLast) {
-          <img class="w-28 absolute top-1/2 left-1/2 transform -translate-1/2 aspect-auto" style="aspect-ratio: 1/1;"
-          cdkDrag [src]="item" alt="Decoracion de arbol de navidad" (cdkDragReleased)="droped(`${i}_2`)">
-        }
-      </div>
+        <div class="relative w-10 h-10">
+          <img [class]="`w-${isLast ? '10' : '8'} absolute top-1/2 left-1/2 transform -translate-1/2 aspect-auto`" style="aspect-ratio: 1/1;"
+          cdkDrag [src]="item" alt="Decoracion de arbol de navidad" (cdkDragReleased)="droped(`${i}`)">
+          @if (!isLast) {
+            <img class="w-8 absolute top-1/2 left-1/2 transform -translate-1/2 aspect-auto" style="aspect-ratio: 1/1;"
+            cdkDrag [src]="item" alt="Decoracion de arbol de navidad" (cdkDragReleased)="droped(`${i}_2`)">
+          }
+        </div>
 
-    }
+      }
+    </div>
 
   </div>
 

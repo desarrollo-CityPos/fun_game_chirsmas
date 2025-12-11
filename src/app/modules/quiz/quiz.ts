@@ -11,4 +11,10 @@ export class Quiz {
   question: string = '';
 
   constructor(public quizService: QuizService) {}
+
+  ngOnInit(): void {}
+
+  getQuestion(): void {
+    this.question = this.quizService.getRandomQuestion().question;
+  }
 }

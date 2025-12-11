@@ -10,10 +10,18 @@ body {
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.8rem;
 }
 .dancing-script-title {
   font-family: 'Dancing Script', cursive;
   font-optical-sizing: auto;
   font-weight: bold;
   font-style: normal;
+}
+
+:root {
+  --spacing: 0.8rem;
+  --text-3xl: 2.75rem;
+  --text-3xl--line-height: 2.75rem;
+  --text-xl: 2.15rem;
 }
