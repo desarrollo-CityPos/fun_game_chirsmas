@@ -136,7 +136,7 @@ export class Roulette implements OnInit, AfterViewInit {
       this.ctx.textAlign = 'right';
       this.ctx.fillStyle = '#fff';
 
-      const fontSize = this.canvasWidth < 400 ? 12 : 18; // Tamaño más pequeño para 40 segmentos
+      const fontSize = this.canvasWidth < 400 ? 12 : 15; // Tamaño más pequeño para 40 segmentos
       this.ctx.font = `bold ${fontSize}px Arial`;
 
       // Sombra para contraste
