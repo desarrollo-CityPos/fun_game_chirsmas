@@ -1,0 +1,15 @@
+// .vscode/settings.json
+{
+  // 1. Incluye los lenguajes de Angular.
+  "tailwindCSS.includeLanguages": {
+    "html": "html",
+    "typescript": "html", // Para plantillas inline
+    "angular": "html" // Por si acaso
+  },
+
+  // 2. Asegúrate de que el editor muestre sugerencias en strings (donde van las clases).
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+
+}
