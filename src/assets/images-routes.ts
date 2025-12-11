@@ -1,3 +1,6 @@
+// Imagenes
+export const snowLandscape: string = 'assets/images/winter_snow_landscape.png';
+export const chirstmasTree: string = 'assets/images/chirstmas_tree.webp';
 export const decorationChirstmas: string[] = [
   'assets/images/decoracion_navideña(1).webp',
   'assets/images/decoracion_navideña(2).webp',
@@ -6,7 +9,6 @@ export const decorationChirstmas: string[] = [
   'assets/images/decoracion_navideña(5).webp',
   'assets/images/decoracion_navideña(6).webp',
   'assets/images/decoracion_navideña(7).webp',
-  'assets/images/decoracion_navideña(8).webp',
 ];
 
 // Logotipos
@@ -20,3 +22,5 @@ export const cityPosLogoGreyWhite: string = 'assets/logos/citipos_logo_girs_blan
 
 // Isotipo
 export const cityPosIsotipo: string = 'assets/logos/citipos_isotipo.svg';
+
+// Otros

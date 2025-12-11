@@ -3,5 +3,17 @@
 @import 'tailwindcss';
 @tailwind utilities;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif, 'Helvetica Neue', sans-serif;
+}
+.dancing-script-title {
+  font-family: 'Dancing Script', cursive;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+}
