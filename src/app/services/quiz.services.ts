@@ -6,209 +6,209 @@ import { Injectable, signal } from '@angular/core';
 export class QuizService {
   public questions: {
     question: string;
-    options: string[];
+    id: number;
     answer: string;
   }[] = [
     {
       question: 'cual es el nombre que mas repite por los pasillos',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 1,
       answer: 'bastidas!',
     },
     {
       question: 'quien se toma todo el café de la oficina',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 2,
       answer: 'luzneida',
     },
     {
       question: 'qué hacer en caso de comercio invalido',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 3,
       answer: 'reenvío de plantilla',
     },
     {
       question: 'qué elemento es vital para sobrevivir al cierre de mes',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 4,
       answer: 'música de wisin y yandel',
     },
     {
       question: 'con cuantos terminales activos contamos actualmente',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 5,
       answer: '3848',
     },
     {
       question: 'qué hacer en caso de mercurio en retrógrado',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 6,
       answer: 'imprimir estrellas de 5 puntas',
     },
     {
       question: 'mes con más ventas',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 7,
       answer: 'octubre',
     },
     {
       question: 'qué frase es la más temida un viernes a las 4:55 pm',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 8,
       answer: 'tenemos que hablar',
     },
     {
       question: 'récord de ventas mensual',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 9,
       answer: '442',
     },
     {
       question: 'cual es las marca de nuestro equipo g25',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 10,
       answer: 'nexgo',
     },
     {
       question: 'cual es empleado que nunca descansa',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 11,
       answer: 'catypos',
     },
     {
       question: 'frase más repetida en el departamento de marketing',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 12,
       answer: 'y christian?',
     },
     {
       question: 'cual es le rif de citypos',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 13,
       answer: '408818680',
     },
     {
       question: 'el peinado mejor mantenido en lo que va de año',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 14,
       answer: 'lenin',
     },
     {
       question: 'visión de citypos',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 15,
       answer: 'ser la empresa líder en punto de ventas con su excelente servicio de postventa',
     },
     {
       question: 'cuantos equipos ofrecen la función contaless',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 16,
       answer: '14',
     },
     {
       question: 'cual es nuestro equipo más moderno',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 17,
       answer: 'n86',
     },
     {
       question: 'el estado con mayor presencia de citypos',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 18,
       answer: 'zulia 551',
     },
     {
       question: 'mayor venta de este año',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 19,
       answer: '15',
     },
     {
       question: 'nuestro equipo mas vendido en lo que va de año',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 20,
       answer: 'n82',
     },
     {
       question: 'no es un cierre de mes efectivo si no pasamos la información a:',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 21,
       answer: 'oriana',
     },
     {
       question: 'total de tickets cerrados en heldesk',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 22,
       answer: '1275',
     },
     {
       question: 'mejor café del mundo',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 23,
       answer: 'toraldo',
     },
     {
       question: 'total de seguidores en instagram',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 24,
       answer: '11,1 mil',
     },
     {
       question: 'que significa codigo 51',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 25,
       answer: 'fondos insuficientes',
     },
     {
       question: 'banco con mayor clientela',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 26,
       answer: 'banco de venezuela',
     },
     {
       question: 'nuestro mayor cliente',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 27,
       answer: 'sumi pan',
     },
     {
       question: 'quién acumula más tazas sucias en su escritorio',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 28,
       answer: 'jose guaina',
     },
     {
       question: 'ciudad con el cliente más lejano',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 29,
       answer: 'santa elena de uairén',
     },
     {
       question: 'qué hacer si el cliente dice que el punto no enciende',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 30,
       answer: 'preguntar si lo enchufó',
     },
     {
       question: 'banco con la aprobación más rápida',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 31,
       answer: 'tesoro',
     },
     {
       question: 'modelo de punto de venta más resistente a caídas',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 32,
       answer: 'n86',
     },
     {
       question: 'cantidad de rollos de papel gastados al mes',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 33,
       answer: '40',
     },
     {
       question: 'en que dia mes y año asumió la nueva gerencia de citypos',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 34,
       answer: '1 noviembre del 2024',
     },
     {
       question: 'apellido de la señora derua',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 35,
       answer: 'torrez',
     },
     {
       question: 'cual es la oficina regional recién inaugurada',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 36,
       answer: 'barinas',
     },
     {
       question: 'cual es la oficina próxima a estrenar',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 37,
       answer: 'maracaibo',
     },
     {
       question: 'en que fecha comenzó a operar city pos',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 38,
       answer: '1 de julio del 2021',
     },
     {
       question: 'cual es numero en el menú de la central para llamar a administración',
-      options: ['Madrid', 'Barcelona', 'Sevilla', 'Valencia'],
+      id: 39,
       answer: 'opcion 7',
     },
   ];
 
   questionsDeleted: {
     question: string;
-    options: string[];
+    id: number;
     answer: string;
   }[] = [];
 
@@ -218,7 +218,7 @@ export class QuizService {
 
   getRandomQuestion(): {
     question: string;
-    options: string[];
+    id: number;
     answer: string;
   } {
     const randomIndex = Math.floor(Math.random() * this.listQuestions().length);

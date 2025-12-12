@@ -1,35 +1,56 @@
-<div class="w-screen h-screen flex flex-col justify-between items-center relative">
+<div class="w-screen h-screen flex flex-col justify-center items-center relative gap-2">
 
   @if (gameOver()) {
     <!-- Overlay -->
-    <div ng class="w-screen h-screen absolute top-0 left-0 bg-black opacity-20 z-90"></div>
+    <div ng class="w-screen h-screen absolute top-0 left-0 bg-black opacity-40 z-90"></div>
 
     <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-100 w-[80%] max-w-[600px]
-    p-5 rounded-2xl bg-white text-cyan-950 border flex flex-col justify-center items-center gap-5">
+    p-3 rounded-2xl bg-white text-cyan-950 border flex flex-col justify-center items-center gap-2">
 
       <p class="text-3xl font-bold text-center dancing-script-title">{{
         youWon() ? '¡Lo lograste!' : '¡Gran trabajo!'
       }}</p>
 
-      @if(youWon()) {
-        <p class="text-xl font-medium text-center">
-          En menos de
-          <span class="value">
-            {{ formattedRemaining() }}
-          </span>
-        </p>
+      <p class="text-xl font-medium text-center">{{getRandomMessage(youWon() ? congratulationsMessage : failMessage)}}</p>
 
-        <p class="text-xl font-medium text-center">Tu espíritu navideño está al máximo.</p>
-      } @else{
-        <p class="text-xl font-medium text-center">Casi lo logras, no dejes de intentarlo con más ganas.</p>
-      }
-
-
-      <button class="z-10 rounded-md bg-indigo-800 hover:bg-blue-700 active:bg-blue-800 py-2 px-4" (click)="reset()">
-        <p class="text-center text-white">Volver a jugar</p>
+      <button class="w-full max-w-[400px] z-10 rounded-md bg-indigo-800 hover:bg-blue-700 active:bg-blue-800 py-2 px-4" (click)="getQuestion()">
+        <p class="text-center text-white">seguir jugando</p>
       </button>
-
+      <button class="w-full max-w-[400px] z-10 rounded-md bg-orange-800 hover:bg-red-700 active:bg-red-800 py-2 px-4" (click)="reset()">
+        <p class="text-center text-white">Empezar de nuevo</p>
+      </button>
     </div>
   }
+
+  <div class="flex flex-col items-center gap-2">
+    <p class="text-3xl font-bold text-center dancing-script-title">Responde correctamente</p>
+    <!-- <p class="text-xl font-medium text-center">¿{{question.toUpperCase()}}?</p> -->
+    <p class="text-xl font-medium text-center">¿Pregunta generica?</p>
+  </div>
+
+  @if(showAnswer()) {
+    <p class="text-xl font-medium text-center">La respuesta es:
+      <!-- <span class="font-bold text-2xl">{{answer.toLocaleUpperCase()}}</span> -->
+      <span class="font-bold text-2xl">respuesta generica</span>
+    </p>
+
+    <div class="flex items-center justify-center gap-2">
+      <button class="z-10 rounded-md bg-red-800 hover:bg-red-700 active:bg-orange-800 py-2 px-4"
+      (click)="showModel(false)">
+        Incorrecto
+      </button>
+      <button class="z-10 rounded-md bg-indigo-800 hover:bg-blue-700 active:bg-blue-800 py-2 px-4"
+      (click)="showModel(true)">
+        Correcto
+      </button>
+    </div>
+  } @else {
+    <button class="z-10 rounded-md bg-indigo-800 hover:bg-blue-700 active:bg-blue-800 py-2 px-4"
+    (click)="showAnswer.set(true)">
+      <p class="text-center text-white">Mostrar respuesta</p>
+    </button>
+  }
+
+
 
 </div>
