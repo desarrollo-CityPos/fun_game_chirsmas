@@ -24,14 +24,12 @@
 
   <div class="flex flex-col items-center gap-2">
     <p class="text-3xl font-bold text-center dancing-script-title">Responde correctamente</p>
-    <!-- <p class="text-xl font-medium text-center">¿{{question.toUpperCase()}}?</p> -->
-    <p class="text-xl font-medium text-center">¿Pregunta generica?</p>
+    <p class="text-xl font-medium text-center">¿{{question.toUpperCase()}}?</p>
   </div>
 
   @if(showAnswer()) {
     <p class="text-xl font-medium text-center">La respuesta es:
-      <!-- <span class="font-bold text-2xl">{{answer.toLocaleUpperCase()}}</span> -->
-      <span class="font-bold text-2xl">respuesta generica</span>
+      <span class="font-bold text-2xl">{{answer.toLocaleUpperCase()}}</span>
     </p>
 
     <div class="flex items-center justify-center gap-2">
