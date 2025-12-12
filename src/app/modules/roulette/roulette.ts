@@ -3,6 +3,7 @@ import { MatButtonModule } from '@angular/material/button'; // Si usas Material
 import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import { RulettteService } from '../../services/roulette.services';
 import confetti from 'canvas-confetti';
+import { audioLose, audioWheel, audioWin } from 'src/assets/assets-routes';
 
 // Definición de las constantes de la ruleta
 const TOTAL_SEGMENTS = 6;
@@ -20,6 +21,11 @@ export class Roulette implements OnInit, AfterViewInit {
   isSpinning: boolean = false;
   showModal: boolean = false;
   resultadoGanador: string = '';
+
+  // --- PROPIEDADES DE AUDIO ---
+  private spinSound!: HTMLAudioElement;
+  private winSound!: HTMLAudioElement;
+  private loseSound!: HTMLAudioElement;
 
   // --- Propiedades del Canvas y Elementos DOM ---
   resultText!: HTMLElement;
@@ -77,6 +83,15 @@ export class Roulette implements OnInit, AfterViewInit {
     // Aseguramos el tamaño (si el canvas no tiene width/height definidos en el HTML)
     this.canvas.width = this.canvasWidth;
     this.canvas.height = this.canvasWidth;
+
+    // --- 1. CARGAR LOS ARCHIVOS DE AUDIO ---
+    this.spinSound = new Audio(audioWheel);
+    this.winSound = new Audio(audioWin);
+    this.loseSound = new Audio(audioLose);
+
+    // Configuración: El sonido de giro debe ser loopeable y tener menor volumen
+    this.spinSound.loop = true;
+    this.spinSound.volume = 0.8; // Ajustar volumen para que no sea muy fuerte
 
     // Dibujamos la ruleta inmediatamente después de inicializar el contexto
     this.drawWheel();
@@ -154,6 +169,12 @@ export class Roulette implements OnInit, AfterViewInit {
   // --- Lógica de Girar ---
   spin() {
     if (this.isSpinning) return;
+
+    // Intentar reproducir. La reproducción automática puede fallar
+    // si el usuario no ha interactuado antes con la página.
+    this.spinSound.play().catch((error) => {
+      console.log('No se pudo iniciar la reproducción automática del sonido de giro.');
+    });
 
     this.isSpinning = true;
     this.spinBtn.disabled = true;
@@ -272,6 +293,10 @@ export class Roulette implements OnInit, AfterViewInit {
   stopSpin() {
     if (!this.animationId) return;
 
+    // Detener el sonido de giro
+    this.spinSound.pause();
+    this.spinSound.currentTime = 0; // Reiniciar el sonido para la próxima vez
+
     this.isSpinning = false;
     this.spinBtn.disabled = false;
     cancelAnimationFrame(this.animationId);
@@ -279,11 +304,13 @@ export class Roulette implements OnInit, AfterViewInit {
 
     // Mostrar el resultado
     this.resultadoGanador = this.segments[this.indiceParadaFinal];
-    console.log(this.resultadoGanador);
 
     this.resultText.textContent = this.resultadoGanador;
     if (this.resultadoGanador === PREMIO_GRANDE) {
       this.triggerConfetti();
+      this.winSound.play();
+    } else {
+      this.loseSound.play();
     }
   }
 }

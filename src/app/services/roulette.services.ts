@@ -13,8 +13,6 @@ export class RulettteService {
    * @returns El índice final de parada.
    */
   public determinarIndiceParada(totalSegments: number, indiceGanadorEspecial: number): number {
-    console.log(this.PROBABILIDAD_ESPECIAL);
-
     // Genera un número aleatorio entre 1 y 10.
     const sorteo = Math.floor(Math.random() * this.PROBABILIDAD_ESPECIAL) + 1;
 

@@ -1,6 +1,7 @@
-import { Component, computed, signal } from '@angular/core';
+import { AfterViewInit, Component, computed, signal } from '@angular/core';
 import confetti from 'canvas-confetti';
 import { QuizService } from 'src/app/services/quiz.services';
+import { audioLose, audioWin } from 'src/assets/assets-routes';
 
 @Component({
   selector: 'app-quiz',
@@ -8,7 +9,7 @@ import { QuizService } from 'src/app/services/quiz.services';
   templateUrl: './quiz.html',
   styleUrl: './quiz.css',
 })
-export class Quiz {
+export class Quiz implements AfterViewInit {
   showAnswer = signal(false);
 
   youWon = signal(false);
@@ -55,7 +56,15 @@ export class Quiz {
     'Incorrecto, pero Santa cree en ti.',
   ];
 
-  ngOnInit(): void {
+  // --- PROPIEDADES DE AUDIO ---
+  private winSound!: HTMLAudioElement;
+  private loseSound!: HTMLAudioElement;
+
+  ngAfterViewInit(): void {
+    // --- 1. CARGAR LOS ARCHIVOS DE AUDIO ---
+    this.winSound = new Audio(audioWin);
+    this.loseSound = new Audio(audioLose);
+
     this.getQuestion();
   }
 
@@ -68,10 +77,6 @@ export class Quiz {
     const question = this.quizService.getRandomQuestion();
     this.question = question.question;
     this.answer = question.answer;
-
-    console.log('Pregunta numero:', question.id);
-    console.log('Eliminados:', this.quizService.questionsDeleted.length);
-    console.log('Restantes:', this.quizService.listQuestions().length);
   }
 
   resetQuiz(): void {
@@ -100,6 +105,9 @@ export class Quiz {
     this.youWon.set(value);
     if (value) {
       this.triggerConfetti();
+      this.winSound.play();
+    } else {
+      this.loseSound.play();
     }
   }
 

@@ -24,4 +24,8 @@ export const cityPosLogoGreyWhite: string = 'assets/logos/citipos_logo_girs_blan
 // Isotipo
 export const cityPosIsotipo: string = 'assets/logos/citipos_isotipo.svg';
 
-// Otros
+// Audios
+export const audioBackground: string = 'assets/audio/background_music.mp3';
+export const audioWheel: string = 'assets/audio/spining_wheel.wav';
+export const audioWin: string = 'assets/audio/winning_sound.wav';
+export const audioLose: string = 'assets/audio/lose_sound.wav';

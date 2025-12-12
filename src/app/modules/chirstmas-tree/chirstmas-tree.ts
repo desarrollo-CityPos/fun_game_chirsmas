@@ -1,7 +1,7 @@
 import { CdkDrag } from '@angular/cdk/drag-drop';
 import { Component, computed, QueryList, signal, ViewChildren } from '@angular/core';
 import confetti from 'canvas-confetti';
-import { chirstmasTree, decorationChirstmas, snowLandscape } from 'src/assets/images-routes';
+import { chirstmasTree, decorationChirstmas, snowLandscape } from 'src/assets/assets-routes';
 
 @Component({
   selector: 'app-chirstmas-tree',
@@ -41,7 +41,6 @@ export class ChirstmasTree {
   droped(id: string): void {
     if (!this.decorationsDropped.includes(id)) {
       this.decorationsDropped.push(id);
-      console.log('Se solto', this.decorationsDropped);
     }
 
     if (this.secondsRemaining() == this.total) this.iniciar();
