@@ -25,6 +25,9 @@ export class ChirstmasTree {
   timerId: any;
 
   readonly secondsRemaining = signal(this.total);
+
+  readonly record = computed(() => this.secondsRemaining() - this.total);
+
   readonly formattedRemaining = computed(() => this.formattedTime(this.secondsRemaining()));
 
   constructor() {}
