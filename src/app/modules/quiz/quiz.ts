@@ -68,6 +68,10 @@ export class Quiz implements AfterViewInit {
     this.getQuestion();
   }
 
+  ngOnInit(): void {
+    this.getQuestion();
+  }
+
   getQuestion(): void {
     if (!this.quizService.listQuestions().length) this.quizService.resetQuiz();
 

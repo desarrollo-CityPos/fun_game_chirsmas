@@ -44,9 +44,9 @@
     </p>
   </div>
 
-  <img [src]="chirstmasTree" alt="Arbol de navidad" class="absolute top-1/2 left-1/2 w-full transform -translate-1/2 z-0 max-w-[700px]">
+ <img [src]="chirstmasTree" alt="Arbol de navidad" class="absolute top-1/2 left-1/2 w-full transform -translate-1/2 z-0 max-w-[400px] md:max-w-[700px]">
 
-  <div class="relative flex justify-around items-center gap-2 p-1 bg-white max-h-[200px] w-full aspect-square">
+  <div class="relative flex justify-around items-center gap-2 p-1 bg-white h-[100px] md:h-auto md:max-h-[200px] w-full aspect-square">
 
     <img [src]="snowLandscape" alt="fondo de nieve blanca" class="absolute top-0 left-0 w-full transform -translate-y-1/2">
 
@@ -54,11 +54,11 @@
       @for (item of decorationChirstmas; track item ; let i = $index;let isLast = $last) {
 
         <div class="relative w-10 h-10">
-          <img [class]="`w-${isLast ? '10' : '8'} absolute top-1/2 left-1/2 transform -translate-1/2 aspect-auto`" style="aspect-ratio: 1/1;"
-          cdkDrag [src]="item" alt="Decoracion de arbol de navidad" (cdkDragReleased)="droped(`${i}`)">
+          <img [class]="w-${isLast ? '10' : '8'} absolute top-1/2 left-1/2 transform -translate-1/2 aspect-auto" style="aspect-ratio: 1/1;"
+          cdkDrag [src]="item" alt="Decoracion de arbol de navidad" (cdkDragReleased)="droped(${i})">
           @if (!isLast) {
             <img class="w-8 absolute top-1/2 left-1/2 transform -translate-1/2 aspect-auto" style="aspect-ratio: 1/1;"
-            cdkDrag [src]="item" alt="Decoracion de arbol de navidad" (cdkDragReleased)="droped(`${i}_2`)">
+            cdkDrag [src]="item" alt="Decoracion de arbol de navidad" (cdkDragReleased)="droped(${i}_2)">
           }
         </div>
 
